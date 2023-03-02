@@ -1,0 +1,122 @@
+
+- (BOOL)giftManagerShouldShowBigGift;
+
+- (BOOL)giftManagerShouldShowLittleGift;
+
+- (void)giftManagerCloseButtonPositionClicked;
+
+- (void)giftManagerWillShowBigGift;
+
+- (void)giftManagerUserSendGift:(ULGoods *)gift price:(NSInteger)price doubleCount:(NSInteger)count isDoubleHit:(BOOL)isDoubleHit lun:(ULLInteger)lun orderNo:(NSString *)orderNo;
+///连击结束
+- (void)giftManagerUserDoubleHitFinishSendGift:(ULGoods *)gift receiver:(ULUser *)receiver doubleCount:(NSInteger)count isDoubleHit:(BOOL)isDoubleHit lun:(ULLInteger)lun orderNo:(NSString *)orderNo;
+
+- (void)giftManager:(ULGiftManager *)giftManager didSelectGift:(ULGoods *)gift;
+
+/// 选中抽卡视图,isCardGray, YES:不可选中状态,toast提示;  NO:展示抽卡视图
+- (void)giftManager:(ULGiftManager *)giftManager didSelectTarotCar:(ULGoods *)gift isCardGray:(BOOL)isCardGray;
+
+/**
+ 礼物接受者资料被按钮点击
+ */
+- (void)giftReceiverInfoDidClick:(ULUser *)aUser;
+
+
+/**
+ 开通会员事件
+
+ @param giftManager giftManager
+ */
+- (void)giftManagerGoToOpenMemberAction:(ULGiftManager *)giftManager from:(ULGiftManagerGoToOpenMemberActionFrom)from;
+
+/**
+ 一元首冲类型活动跳转
+
+ @param giftManager giftManager
+ */
+- (void)giftManagerGoToH5Action:(ULGiftManager *)giftManager gift:(ULGoods *)gift;
+
+/**
+展示扭蛋动画
+
+@param giftManager giftManager
+*/
+- (void)giftManagerShowLotteryAnimation:(ULGiftManager *)giftManager lotteryResult:(ULLiveLotteryResult *)lotteryResult selectedGoods:(ULLiveBackpackGoods *)goods;
+
+/**
+ 道具点击使用，需要外部来展示UI
+ */
+- (void)giftManagerGotoPropUsing:(ULLiveBackpackGoods *)goods;
+
+/// 展示完一条上墙消息
+- (void)giftManagerUpWallShowMessageComplete:(ULMessage *)message;
+
+/// 点击上墙头像或者名字
+- (void)giftManagerUpWallToastManagerClickAvatarOrNameWithSenderId:(ULLInteger)senderId;
+
+/**
+ 气泡状态发生变化
+ */
+- (void)giftManagerBubbleStatusChanged:(ULLiveBackpackGoods *)goods;
+
+/// 礼物发送完成
+/// @param aGift 礼物
+/// @param count 数量
+/// @param selectTab 礼物面板Tab
+/// @param selectSubTab 背包子Tab
+- (void)giftManagerSendGiftComplete:(ULGoods *)aGift count:(NSInteger)count selectTab:(ULLiveSendGiftPanelType)selectTab subTab:(ULLiveBackpackGoodsType)selectSubTab;
+
+/// 展示了背包、礼物面板、招财猫礼物引导
+/// @param panelView panelView
+/// @param guideView guideView
+- (void)giftManagerShowBackpackGiftGuideView:(ULGameGuideView *)guideView;
+
+/// 背包送礼 点击事件回调
+/// @param clickEventType 事件类型
+- (void)giftManagerBackpackGiftClickEventType:(ULBackpackGiftClickEventType)clickEventType;
+
+/// 点击礼物卡片
+/// @param block 转屏回调
+- (void)giftManagerDidSelectGiftCard:(UIView *)selectGiftView giftCardId:(ULLInteger)giftCardId;
+
+/// 获取用户是否是守护团成员
+- (BOOL)giftManagerUserIsBuyFansGroup;
+
+/// 弹窗提示用户加入守护团
+- (void)giftManagerShowAlertToJoinFansGroup;
+
+/// 点击购买贵族
+- (void)giftManagerDidClickBuyNobleWithActionType:(ULLiveSendGiftPanelBottomViewButtonType)buttonType targetNobleId:(ULLInteger)nobleId;
+
+/// 点击礼物面板主tab回调, 普通、专属、贵族、扭蛋、背包
+- (void)giftManager:(ULGiftManager *)giftManager didClickTab:(ULLiveSendGiftPanelType)selectTab;
+/// 点击礼物面板背包tab回调, 全部、背包礼物、碎片、气泡、道具
+- (void)giftManager:(ULGiftManager *)giftManager didClickSubTab:(ULLiveBackpackGoodsType)selectSubTab;
+
+
+/// 礼物连击结束
+/// @param aGift 礼物
+/// @param count 总共送出的数量
+/// @param selectTab 礼物面板Tab
+/// @param selectSubTab 背包子Tab
+- (void)giftManagerSendGiftDoubleHitComplete:(ULGoods *)aGift count:(NSInteger)count selectTab:(ULLiveSendGiftPanelType)selectTab subTab:(ULLiveBackpackGoodsType)selectSubTab;
+
+
+
+
+
+
+
+
+#pragma mark - 新增代理
+
+
+
+
+/// 开始展示扭蛋动画
+- (void)giftManagerBeginShowLotteryAnimationWithOrientation:(UIDeviceOrientation)orientation;
+
+
+
+
+

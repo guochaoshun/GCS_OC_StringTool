@@ -1,0 +1,129 @@
+
+# 阿里云SDK
+def aliyunsdks
+  # 阿里云 DNS
+  pod 'ULAliyunHTTPDNS' , '= 2.0.6'
+  # 阿里云 AliyunOSSiOS
+  pod 'ULAliyunOSS', '= 2.6.3.1'
+end
+
+# kila私有库
+def ulcommon
+  # bugly
+  pod 'ULBugly' , '= 2.5.9'
+  # 极光推送
+  pod 'ULJPush' , '= 4.6.0'
+  # 定时器timer
+  pod 'ULTimer' , '= 0.0.2'
+  # 图片加载
+  pod 'ULSDWebImage', '= 5.9.5.4'
+  # YYWebImage 图片加载
+  pod 'ULYYWebImage', '=1.0.5.1'
+  # 滤镜特效
+  pod 'ULPostEffect', '= 0.0.11'
+  # 分享 授权 QQSDK：3.2.1  微信SDK 1.8.6.2 微博SDK：'WeiboSDK' 当前版本号：3.2.3
+  pod 'ULVenderLib', '= 0.1.1'
+  # 微博SDK：'WeiboSDK' 当前版本号：3.2.7
+  pod 'ULWeiboSDK',  '= 3.3.2'
+  # IM manager
+  pod 'ULIM', '= 0.1.0.2.1'
+  # 富文本：'YYText'
+  pod 'ULYYText' , '= 0.0.3'
+  # 引擎和ijk播放器
+  pod 'ULIJKPlayer', '= 0.4.19'
+  pod 'ULLiveUgo', '= 4.2.5'
+  # 源码库  WaterFlowLayout，WebServer，StylePageControl，Somo，ProtocolKit，GZIP，BarrageRenderer,LDNetDiagnoService
+  pod 'ULVenderSourceCode', '= 0.1.0'
+  # BarrageRenderer,弹幕库
+  pod 'ULBarrageRenderer', '= 0.1.1'
+  #  ULMJRefresh
+  pod 'ULMJRefresh', '= 3.5.1'
+  # 网络库
+  pod 'ULAFNetworking' , '= 3.2.1'
+  # 网络检测库
+  pod 'ULNetworkUtils', '= 0.0.3'
+  #  ULUx3DLib
+  pod 'ULUx3DLib', '= 0.0.1'
+  # 侧滑
+  pod 'ULFullscreenPopGesture', ' = 0.0.2'
+  pod 'ULLottie', '= 0.0.3'
+  # 埋点事件封装
+  pod 'ULEventTracking/ULReYunEventTracking', '= 1.9.0.1'
+  # 热云SDK
+  pod 'ULReYunTracking', '= 1.9.0'
+  # vtmagic 可复用的切换控制器框架
+  pod 'ULMenuSwitcher', '= 1.0.1.1'
+  # 多媒体缓存
+  pod 'ULKTVHTTPCache', '= 2.0.1.5'
+  # AppsFlyer埋点
+  pod 'ULAppsFlyerManager/ULNewAppsFlyer', '= 6.5.2'
+  # LinkedME SDK集成
+  pod 'ULLinkedME' , '= 1.5.5.4'
+  # ULUUID
+  pod 'ULUUID' , '= 1.3.2'
+  # m3u8缓存的库
+  pod 'ULSJMediaCacheServer', '= 0.1.4'
+end
+
+
+# 友盟SDK
+def umeng
+  pod 'ULUmeng' , '= 7.3.6'
+end
+
+def vendor
+  # 防止崩溃
+  pod 'AvoidCrash', '= 2.5.2'
+
+  # 日志：'CocoaLumberjack'
+  pod 'CocoaLumberjack' , '= 3.3.0'
+
+  # tableView为空视图
+  pod 'CYLTableViewPlaceHolder' , '= 1.0.8'
+
+  # 数据库：'FMDB'
+  pod 'FMDB' , '= 2.7.2'
+
+  # 轮播图 : 'iCarousel'
+  pod 'iCarousel' , '= 1.8.3'
+
+  # 布局：'Masonry'
+  pod 'Masonry' , '= 1.1.0'
+
+  # 提示框：'MBProgressHUD'
+  pod 'MBProgressHUD' , '= 1.1.0'
+
+  # 数据转换：'MJExtension'
+  pod 'MJExtension' , '= 3.1.0'
+
+  # 获取设备udid：'OpenUDID'
+#  pod 'OpenUDID' , '= 1.0.0'
+
+  # zip:压缩和解压缩
+  pod 'SSZipArchive' , '= 2.1.1'
+
+end
+
+platform :ios, '9.0'
+
+# 主工程
+target 'UXLive' do
+
+# 美图检测工具
+#hawkeye
+
+# 阿里云SDK
+aliyunsdks
+
+# kila私有库
+ulcommon
+
+# 友盟统计
+umeng
+
+# 非源码集成且未制作成私有pod的三方库
+vendor
+
+end
+
+
